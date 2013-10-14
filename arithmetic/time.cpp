@@ -1,5 +1,8 @@
-// take some time and convert it to discrete elements
-// start with the smallest period - seconds
+/// @file time.cpp
+/// @author Adam Koehler
+/// @date October 11, 2013
+/// @brief Code snippets and comments utilized in lecture on 10/11/13 to 
+///        discuss how to split a number of seconds into discrete time periods.
 
 #include <iostream>
 #include <ctime>
@@ -31,7 +34,8 @@ int main()
     // remove minutes from total, whatever remains is the seconds count
     seconds = seconds % SECONDS_PER_MINUTE;
     
-    
+ 
+    // Output the values that were calculated   
     cout << "days: " << days << endl;
     cout << "hours: " << hours << endl;
     cout << "minutes: " << minutes << endl;
