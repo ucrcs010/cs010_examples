@@ -15,7 +15,7 @@ functions
 vectors
 strings
 input_output (getline / output operator / formatting)
-boolean_logic
+boolean
 
 
 Once the workspace is created, you can utilize two terminal commands. The first
