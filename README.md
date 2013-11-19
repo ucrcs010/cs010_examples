@@ -33,4 +33,5 @@ will utilize the above "git pull" whenever you wish to check and see if there
 is anything new for you to "grab".
 
 
-To go back to the top level home directory we utilize an aliased command "home".
+To go back to the top most visible level of your workspace, we provide an alias
+to take you there, just type "home" and hit enter.
