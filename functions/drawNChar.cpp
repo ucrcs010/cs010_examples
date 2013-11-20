@@ -31,9 +31,9 @@ int main()
     return 0;
 }
 
-// @brief draw out n characters to standard output (cout)
-// @param n the number of charcters to draw
-// @param c the charcter to draw, if no argument is sent the value '*' is used
+/// @brief draw out n characters to standard output (cout)
+/// @param n the number of charcters to draw
+/// @param c the charcter to draw, if no argument is sent the value '*' is used
 void drawNChars(int n, char c)
 {
     for (int i = 1; i <= n; i++)
