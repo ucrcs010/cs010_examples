@@ -3,10 +3,9 @@ using namespace std;
 
 int main()
 {
-    
     // EXERCISE:
     // When is a given year a leap year?
-    // a) if year is divisble by 4;
+    // a) if year is divisible by 4;
     // b) EXCEPT if year is divisible by 100
     // c) EXCEPT if it is also divisible by 400
     // SEE http://en.wikipedia.org/wiki/Leap_year
@@ -19,6 +18,7 @@ int main()
     int year;
     cout << "What year? ";
     cin >> year;
+    
     
     bool isLeap = false; // establish "default" value
     
@@ -88,6 +88,16 @@ int main()
     // BEST solution:
     isLeap = (year % 400 == 0) || ( (year % 4 == 0) && (year % 100 != 0) );
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 // Then we can use the stored result (isLeap) elsewhere in the program:
     cout << year << " is";
     if (!isLeap)
@@ -96,10 +106,26 @@ int main()
     }
     cout << " a leap year!" << endl;
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // EXERCISE:
     // Use de Morgan's law to use the above to come up with an expression for
     bool isNotLeap;
     
+    
+
     /* 
     de Morgan's law
     Take two bool expressions a, b, e.g.
