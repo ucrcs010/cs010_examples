@@ -1,7 +1,7 @@
 /// @file randChar.cpp
 /// @author Adam Koehler
-/// @date November 8, 2013
-/// @brief Example utilized in class on Noverember 8, 2013.
+/// @date February 18, 2014
+/// @brief Example utilized during labs on February 18, 2014.
 ///
 ///     In the example we demonstrate a generation of a random character from
 ///     a provided possible range of characters. Then we take that and write
