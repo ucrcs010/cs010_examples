@@ -41,7 +41,7 @@ int main()
     double maxRainfall;
     
     vector<double> rainfall; // vector is initially empty!
-    vecto< vector<double> > rainfallTable;
+    vector< vector<double> > rainfallTable;
 
     // invoke fillVector:
     fillVector(rainfall);
@@ -71,7 +71,7 @@ int main()
     // and one vector of vector<double> - rainfallTable
     // fill the 2-d vector with vector<double>'s 
     // vector< vector<double> > rainfallTable
-        rainfallTable.push_back( rainfall )
+    rainfallTable.push_back( rainfall );
     
     return 0;
 }
@@ -92,8 +92,7 @@ void displayVector( const vector<double> & v )
 void fillVector( vector<double> & v )
 {
     double value;
-    //while ( cin >> value )
-    for (int i = 0; i < 12; ++i)
+    while ( cin >> value )
     {
         v.push_back(value);
     }
@@ -120,6 +119,8 @@ bool isFound( const vector<double> & v, double val)
     return false;
 }
 
+/*
 1.0 2.0 3.1 
 0.5 1.3 4.1
 0.8 0.9 1.1
+*/
