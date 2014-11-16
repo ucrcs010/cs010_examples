@@ -7,54 +7,7 @@
 #include <cmath>
 #include <iostream>
 
-// To include a local file, we utilize "" instead of <>
-// Additionally, locally created files often have the header file extension, .h
-// #include "assn.h"
-
-
 using namespace std;
-
-// 3 pieces of info for a function
-// 1) return value
-// 2) name
-// 3) parameters list
-
-// for example: sqrt(4) ===> 2.0
-//      When calling the function we send a single argument, 4, to fill the 
-//      required single parameter that has a type double. We expect a return 
-//      value of type double that is the square root of the number we provided.
-//      We invoke the function by using its name and surrounding all the 
-//      arguments (if there are any) by parentheses.
-
-// Somewhere in the cmath library there is a definition of the square root 
-//      function that has all the outlined pieces, such as:
-// double sqrt(double x)
-// {
-//     double myRoot;
-//    
-//     // code to compute the square root and store into myRoot variable
-//    
-//     return myRoot;
-// }
-
-
-/// @brief draw a right triangle of a specified size and character
-/// @param size the size of one of the sides of the isosceles right triangle
-/// @param myC the character to use when drawing the triangle
-void drawTriangle(int size, char myC)
-{
-    //  triangle 1 to N
-    for (int row=1; row <= size; row++)
-    {
-        for (int col=1; col <= row; col++)
-        {
-            cout << myC << ' ';
-        }
-        cout << endl;
-    }     
-}
-
-
 
 int main()
 {
@@ -62,7 +15,6 @@ int main()
     
     // take in size of side
     cin >> sideSize;
-    
     
     // draw a square to output using nested loops
     // use for loops because we know the iteration count
@@ -78,54 +30,40 @@ int main()
     }
     cout << endl << endl;
     
-    
-    // We cannot invoke a function with return type 'void' inside an output
-    //      statement because it does not return anything to send 
-    //      to the output stream.
-    //cout << drawTriangle(sideSize, '*');
-    
-    // We can put a function invocation that returns something in an output 
-    //      statement, because the return value will be sent to 
-    //      the output stream
-    cout << sqrt(4.0);
-    
-    
-    //  triangle 1 to N
-    drawTriangle(10, '-');
+    // draw a right isosceles triangle
+    for (int row=1; row <= sideSize; row++)
+    {
+        for (int col=1; col <= row; col++)
+        {
+            cout << "* ";
+          
+        }
+        cout << endl;
+    }    
     cout << endl << endl;
-    drawTriangle(sideSize, '+');
     
-    // for (int row=1; row <= sideSize; row++)
-    // {
-    //     for (int col=1; col <= row; col++)
-    //     {
-    //         cout << "* ";
+    // draw a right isosceles triangle upside down
+    for (int row=1; row <= sideSize; row++)
+    {
+        for (int col=sideSize; col >= row; col--)
+        {
+            cout << "* ";
           
-    //     }
-    //     cout << endl;
-    // }    
-    
-    // cout << endl << endl;
-    
-    // for (int row=1; row <= sideSize; row++)
-    // {
-    //     for (int col=sideSize; col >= row; col--)
-    //     {
-    //         cout << "* ";
-          
-    //     }
-    //     cout << endl;
-    // }  
+        }
+        cout << endl;
+    }  
  
-    // for (int row=1; row <= sideSize; row++)
-    // {
-    //     for (int col=sideSize; col >= row; col--)
-    //     {
-    //         cout << "- ";
+    cout << endl << endl; 
+    // draw a right isosceles triangle upside down using '-'
+    for (int row=1; row <= sideSize; row++)
+    {
+        for (int col=sideSize; col >= row; col--)
+        {
+            cout << "- ";
           
-    //     }
-    //     cout << endl;
-    // }     
+        }
+        cout << endl;
+    }     
     
     return 0;
 }
