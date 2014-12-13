@@ -1,8 +1,9 @@
-/// @file vectors_intro.cpp
+/// @file vectors_sort_broken.cpp
 /// @author Adam Koehler
 /// @date December 1, 2014
 /// @brief Code snippets and comments utilized in lecture on 12/1/14 to 
-///        discuss vetors and sorting.
+///        discuss vetors and sorting. 
+///     THIS CODE IS BROKEN, we debugged it in the following class (12/3).
 
 #include <iostream>
 #include <algorithm>
@@ -25,6 +26,9 @@ int findMax(const vector <int> &v, int endPoint)
         }
     }
     
+    // ADDED DURING DEBUG LECTURE.
+    cout << locMax << endl;
+    
     return locMax;
 }
 
@@ -33,6 +37,7 @@ int main()
 {
     // declare the vector and variables for the program
     vector <int> myV(5);
+    vector <int> solutionV(5);
     int curEnd, location;
     
     // set 5 initial values
@@ -42,6 +47,12 @@ int main()
     myV.at(3) = 1;
     myV.at(4) = 2;
     
+    // set 5 initial values
+    solutionV.at(0) = 3;
+    solutionV.at(1) = 7;
+    solutionV.at(2) = 5;
+    solutionV.at(3) = 1;
+    solutionV.at(4) = 2;    
     
     // print out the vector
     cout << "Before: ";
@@ -63,6 +74,14 @@ int main()
         
         // swap the max value to the end of the vector
         swap(myV.at(location), myV.at(curEnd));
+        
+        // ADDED DURING DEBUG LECTURE
+        cout << "iteration " << i << ": ";
+        for(int i=0; i < myV.size(); i++)
+        {
+            cout << myV.at(i) << ' ';
+        }
+        cout << endl;         
     }
     
     // print out the vector
@@ -72,6 +91,21 @@ int main()
         cout << myV.at(i) << ' ';
     }
     cout << endl;
+    
+    
+    
+    // ADDED DURING DEBUG LECTURE
+    // Sort the solution vector with the algorithm sort
+    sort(solutionV.begin(), solutionV.end());
+    
+    // Test for equality across my vector and solution vector
+    for(int i=0; i < myV.size(); i++)
+    {
+        if(myV.at(i) != solutionV.at(i))
+        {
+            cout << "BAD at index " << i << endl;
+        }
+    }
 }
 
 

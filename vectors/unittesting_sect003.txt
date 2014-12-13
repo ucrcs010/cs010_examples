@@ -1,0 +1,7 @@
+Unit Testing
+1. How can write test cases for each of our functions?
+
+2. How can we write a test that compares two vectors and
+determines if the vectors are equivalent?
+
+3. Can (2) be a function?  What type of function?
