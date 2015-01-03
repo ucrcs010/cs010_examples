@@ -1,6 +1,0 @@
-Debugging:
-1. How can we break down the program to look at
-specific cases/values to try and isolate the code to look at?
-
-2. Based on our break down in (1), what pieces of information
-should we print out so we can further look into our issue?
