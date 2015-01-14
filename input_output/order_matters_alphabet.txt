@@ -1,0 +1,39 @@
+Question:
+In your notebook, write the alphabet.
+
+Five potential answers:
+// all upper case letters in the alphabet in order
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+// all lower case letters in the alphabet in order
+abcdefghijklmnopqrstuvwxyz
+
+// a mix of upper and lower case letters
+// of the alphabet in order
+abCdEfghijKLMnopqrstuvwxyz
+
+// all the letters in the alphabet but not in order
+abvwpqcdefghixylmnorjkstuz
+
+// the most literal interpretation of the question
+the alphabet
+
+
+// Order is important. The following have the
+// same three elements but produce different results.
+cout << "World" << "Hello";
+cout << "Hello" << "World";
+
+Order is built into our linguistics. Order is important,
+and we don't always explicitly denote that fact. When
+we think about the alphabet or ask someone to say the 
+alphabet, it is almost always implied the the alphabet
+is the in order sequence of letters from a to z. If
+we wrote something else, then that may contain all 
+the letters of the alphabet but that is not what is 
+most commonly expected. This implicit expectation is 
+something that becomes tricky when dealing with other
+individuals who utilize another alphabet, or in our case
+a computer. Each expectation needs to be explicitly
+stated, the computer is not built to read human 
+contextual clues nor is it a mind reader.
