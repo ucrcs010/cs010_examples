@@ -1,0 +1,52 @@
+ 7 % 5 ==> 2
+ 0 % 7 ==> 0
+ 
+ x % 6 => 0->5
+ 
+ 6 % x ==> {0,1,2,6}
+ 6%11 => 6
+ 6 % 0 ==> UNDEFINED
+ 6 % 1 ==> 0
+ 6 % 2 ==> 0
+ 6 % 3 ==> 0
+ 6 % 4 ==> 2
+ 6 % 5 ==> 1
+ 6 % 6 ==> 0
+ 6 % 7+ ==> 6
+ 
+ 
+ x % y ==> [0, y-1]
+ 
+ 
+ type conversion
+ -----------------
+ moving from one type to another
+ double x = 6; <=== implicit type conversion
+ 
+ static_cast for explicit type conversion
+ used to convert to lower precision
+ int y = 6.7;
+ 
+ 6.0
+ 
+may be 5.99999999999999
+may be 6.000000000001
+we add a nominal amout (.5)
+may be 6.49999999999999
+may be 6.500000000001
+
+
+97 ==> cast to char ==>> 'a'
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
