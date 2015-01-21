@@ -52,5 +52,16 @@ int main()
     // Output the acquired value
     cout << x;
     
+    
+    
+    // bool - 
+    // literals: true false
+    // bool x = true;
+    
+    
+    
+    
+    
+    
     return 0;
 }
