@@ -38,6 +38,11 @@ int main()
     //      character starting at 0
     char current = s.at(0); // current gets the character at index 0, 'h'
     current = s.at(3);      // current gets the character at index 3, 'l'
+    
+    // out of range errors
+    // cout << p << endl;
+    // current = s.at(p);
+    s.at(0) = 'j';
 
 
     // Another function, find(), allows us to find a character or
@@ -49,7 +54,7 @@ int main()
     // find will return string::npos when nothing is found
     int location = s.find('o'); // location is assiged 4, the index of 'o'
     location = s.find("llo");   // location is assiged 2, the index of 'l'
-    location = s.find('l');     // location is assiged 4, the index of the first 'l'
+    location = s.find('l');     // location is assiged 2, the index of the first 'l'
     location = s.find('b');     // location is assigned string::npos because nothing is found
 
     if (s.find('b') != string::npos)
