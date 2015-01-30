@@ -57,6 +57,12 @@ int main()
     {
         cout << "character is a consonant" << endl;
     }
+    
+    // negation of boolean compound
+    !(c == 'a' || c == 'e')
+    
+    // improper
+    // c != 'a' || c != 'e'
 
     return 0;
 }
