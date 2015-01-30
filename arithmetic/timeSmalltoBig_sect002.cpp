@@ -6,7 +6,6 @@
 
 
 #include <iostream>
-#include <cmath>
 
 // used for time()
 #include <ctime>
@@ -23,21 +22,26 @@ int main()
     const int HOURS_PER_DAY = 24;
     
     // acquire curernt time in second from 1970
-    int x  = time(0);
+    int x = time(0);
     int seconds, minutes, hours;
 
     // acquire seconds
-    seconds = x % SECONDS_PER_MINUTE; 
-    x = x / SECONDS_PER_MINUTE; // convert from seconds to minutes
-    
+    seconds = x % SECONDS_PER_MINUTE;
+    x = x / SECONDS_PER_MINUTE;
+
     // acquire minutes
     minutes = x % MINUTES_PER_HOUR;
-    x = x / MINUTES_PER_HOUR; // convert from minutes to hours
+    x = x / MINUTES_PER_HOUR;
 
     // acquire hours
     hours = x % HOURS_PER_DAY;
+
+    // print time
+    // cout << "Seconds : " << seconds << endl;
+    // cout << "Minutes : " << minutes << endl;
+    // cout << "Hours : " << hours << endl;
     
-    cout << (hours-7)%12 << ":" << minutes << ":" << seconds << endl;
+    cout << (hours - 8) << ":" << minutes << ":" << seconds << endl;
     
     
     return 0;
