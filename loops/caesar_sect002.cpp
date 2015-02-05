@@ -50,21 +50,29 @@ int main()
     int maxShift = 'z' - 'a';
     
     // update the shift value to be within max range, [0, maxShift]
-    shift = shift % maxShift;
+    shift = shift % (maxShift + 1);
     
     // Q: How do we know maxShift and modifying shift works?
     // Q: How can we show it? (not necessarily prove conclusively)
+    // A:   Use actual numbers and letters, 26 and 0 should be same shift.
     
     
     // Q: How can we convert the following loop to a for loop?
+    // A:   Take each of the loop parts and put them in the for loop header.
+    //      We will almost always use a for loop when dealing with strings.
+    
     // Q: Why should we be using a for loop?
+    // A:   We use a for loop when we know the pieces or can caluclate 
+    //      the pieces that go in the for loop header.
     
     
+    // Encrypt using caesar cipher
     if ("encrypt" == option)
     {
         // go over the entire word and convert the letters
-        int i = 0;
-        while (i < 3)
+        // int i = 0;
+        for (int i=0; i < word.size(); i++)
+        // while (i < 3)
         {
             word.at(i) = word.at(i) + shift;
             
@@ -72,17 +80,29 @@ int main()
             //      as a single index is handled per iteration of the loop
             // word.at(1) = word.at(1) + shift;
             // word.at(2) = word.at(2) + shift;
-            
+    
+            // check to make sure we did not go beyond alphabetic letters        
             if (word.at(i) > 'z')
             {
                 word.at(i) = word.at(i) - 26;
             }
-            i++;
+            // i++;
         }
     }
-    
-    // Q: How can we add decryption?
-    
+    else if ("decrypt" == option)   // Q: How can we add decryption?
+    {
+        // go over the entire word and convert the letters
+        for (int i=0; i < word.size(); i++)
+        {
+            word.at(i) = word.at(i) - shift;
+
+            // check if outside of range 'a' to 'z'
+            if (word.at(i) < 'a')
+            {
+                word.at(i) = word.at(i) + 26;
+            }
+        }
+    }    
     
     // Output the phrase for option chosen by the user
     if ("encrypt" == option)
