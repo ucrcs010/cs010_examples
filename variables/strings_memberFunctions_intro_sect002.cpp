@@ -39,10 +39,18 @@ int main()
     char current = s.at(0); // current gets the character at index 0, 'h'
     current = s.at(3);      // current gets the character at index 3, 'l'
     
-    // out of range errors
-    // cout << p << endl;
-    // current = s.at(p);
-    s.at(0) = 'j';
+    s.at(0) = 'j';  // index 0 of string s gets assigned the character 'j'
+    // now s contains "jello"
+    
+    // debugging out of range errors
+    // lets says we get an out of range error, we need to know 
+    // what value we are sending to at() in order for us to then
+    // determine why we are getting such an odd value
+    p = -1;
+    // .... 50+ lines of code ...
+    cout << p << endl;  // <- after we get out of range, we insert this
+    current = s.at(p);
+    
 
 
     // Another function, find(), allows us to find a character or
