@@ -3,6 +3,11 @@
 /// @date February 20, 2015
 /// @brief Code snippets and comments used to discuss and write functions.
 
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 // First:
 // Given a character, write a predicate function that returns 
 //  whether the provided character is a vowel 
@@ -47,6 +52,7 @@ int countCons(string word)
     int count = 0;
     
     count = word.size() - countVowels(word);
+    count--;
     
     return count; 
 }
@@ -57,8 +63,43 @@ int countCons(string word)
 //  scenarios
 void testCons()
 {
+    int result;
+    // test "sky" - 1 vowel at end
+    // test "confounded" - mix of many
+    // test "bcdf" - no vowels
+    // test "aeiouy" - no consonants, "y"
     
+    result = countCons("sky");
+    if (2 != result) 
+    {
+        cout << "testing \"sky\" found " << result << " wanted 2" << endl;
+    }
     
+    result = countCons("bcdf");
+    if (4 != result) 
+    {
+        cout << "testing \"bcdf\" found " << result << " wanted 4" << endl;
+    }
+    
+    result = countCons("aeiouy");
+    if (0 != result) 
+    {
+        cout << "testing \"aeiouy\" found " << result << " wanted 0" << endl;
+    }
+    
+    result = countCons("confounded");
+    if (6 != result) 
+    {
+        cout << "testing \"confounded\" found " << result << " wanted 6" << endl;
+    }    
+    
+}
+
+// main used simply to call our testing function
+int main()
+{
+    testCons();
+    return 0;
 }
 
 

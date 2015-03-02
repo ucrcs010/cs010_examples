@@ -110,6 +110,7 @@ int main()
         // perform some action    
     }
     
+    sqrt(56); // does nothing, ignoring return value
     
     // When calling functions without a return value (void functions), we may 
     //  only invoke the function as it's own statement
