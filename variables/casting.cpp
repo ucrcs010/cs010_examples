@@ -2,7 +2,7 @@
 /// @author Adam Koehler
 /// @date October 4, 2016
 /// @brief Code snippets and comments utilized in lecture on 10/04/16 to 
-///        discuss casting between variable types.
+///        discuss casting between datatypes.
 
 #include <iostream>
 using namespace std;
