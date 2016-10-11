@@ -1,7 +1,7 @@
 /// @file tallestPersonAlgorithm.txt
 /// @author Adam Koehler
-/// @date October 20, 2014
-/// @brief Code snippets and comments utilized in lecture on 10/20/14 to 
+/// @date October 6, 2016
+/// @brief Code snippets and comments utilized in lecture on 10/6/16 to 
 ///        discuss comparisons and algorithm design
 
 Question:
