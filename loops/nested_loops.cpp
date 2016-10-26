@@ -21,9 +21,9 @@ int main()
     //  * * * *
     //  * * * *
     //  * * * *
-    for(int r=0; r < sideSize; r++)
+    for(int r = 1; r <= sideSize; r++)
     {
-        for(int c=0; c < sideSize; c++)
+        for(int c = 1; c <= sideSize; c++)
         {
             cout << '*' << ' ';
         }
@@ -37,9 +37,9 @@ int main()
     //  * * *   4 - 1
     //  * *     4 - 2
     //  *       4 - 3
-    for(int r=0; r < sideSize; r++)
+    for(int r = 1; r <= sideSize; r++)
     {
-        for(int c=0; c < sideSize - r; c++)
+        for(int c = 0; c <= sideSize - r; c++)
         {
             cout << '*' << ' ';
         }
@@ -54,14 +54,14 @@ int main()
     //      * * 
     //    * * *   
     //  * * * * 
-    for (int r=1; r <= sideSize; r++)
+    for (int r = 1; r <= sideSize; r++)
     {
-        for (int c=1; c <= sideSize - r ; c++)
+        for (int c = 1; c <= sideSize - r ; c++)
         {
-            cout << '*' << ' ';
+            cout << ' ' << ' ';
         }
         
-        for(int c=1; c <= r ; c++)
+        for(int c = 1; c <= r ; c++)
         {
             cout << '*' << ' ';
         }
