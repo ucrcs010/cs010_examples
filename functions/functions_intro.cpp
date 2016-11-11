@@ -60,7 +60,7 @@ int main()
     srand(seedVal);
     
     //..... a bunch of code ...
-    int dieRoll1 = randomInt(3,6);
+    int dieRoll1 = randomInt(low,6);
     cout << randomInt(3,6);
     if (randomInt(3,6) == 3)
     {
@@ -75,10 +75,20 @@ int main()
 }
 
 
+
 // if a function is declared here then it can only be used in code
 //  that comes after it, therefore it cannot be invoked in main
 int randomIntLH (int low, int high)
 {
-   int roll = low + rand()%(high-low+1);
-   return roll;
+  int roll = low + rand()%(high-low+1);
+  return roll;
 }
+
+
+// 1) parameter variables
+//      -- declared in the parameter list of the function
+// 2) local variables
+//      -- declared inside any function at any point
+// 3) global variables
+//         -- any variable declared outside of function
+//         -- do not use in CS 010
