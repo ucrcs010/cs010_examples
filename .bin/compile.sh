@@ -28,11 +28,12 @@ flags=""
                 rm _no_name_tmp.cpp &>/dev/null
                 if [ "$value" == "" ]
                 then
-                    value=$(cat $1 2>/dev/null)
+                    value=$(cat $var 2>/dev/null)
                 fi
                 code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
                 err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$myerrs")"
-                rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"        
+                rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"
+                filenameCPP="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$var")"        
                 curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}" &>/dev/null
             done
             rm -rf cmp_tmp &>/dev/null
@@ -43,7 +44,7 @@ flags=""
             rm _no_name_tmp.cpp &>/dev/null
             if [ "$value" == "" ]
             then
-                value=$(cat $1 2>/dev/null)
+                value=$(cat $var 2>/dev/null)
             fi
             code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
             err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$errors")"
