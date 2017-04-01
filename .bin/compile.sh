@@ -5,8 +5,8 @@ ERROR_AREA="entry.727705083"
 RSUB_EMAIL_AREA="entry.1527918066"
 errors=$(g++ -Wunused -Wfloat-equal -Wreturn-type $* 2>&1)
 
-if [ "${errors}" != "" ] 
-then
+#if [ "${errors}" != "" ] 
+#then
     if [ "${UCRCS_COURSE}" == "CS010" -o "${UCRCS_COURSE}" == "CS010v" ]
     then
         if [ "$#" -gt 1 ]; then
@@ -44,5 +44,5 @@ then
         fi
     fi
     echo "$errors"
-fi
+#fi
 
