@@ -44,7 +44,7 @@ flags=""
             rm _no_name_tmp.cpp &>/dev/null
             if [ "$value" == "" ]
             then
-                value=$(cat $var 2>/dev/null)
+                value=$(cat $1 2>/dev/null)
             fi
             code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
             err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$errors")"
