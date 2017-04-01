@@ -22,9 +22,9 @@ flags=""
                     flags="${flags} $var"
                     continue
                 fi
-                echo "$flags"
+                
                 myerrs=$(g++ -Wunused -Wfloat-equal -Wreturn-type $flags -c $var -o cmp_tmp/$var.o 2>&1)
-                cpCall="g++ -Wunused -Wfloat-equal -Wreturn-type ${flags} -c ${var} -o cmp_tmp/${var}.o"
+                cpCall="g++ -Wunused -Wfloat-equal -Wreturn-type ${flags} -c ${var}"
                 cp $var _no_name_tmp.cpp &>/dev/null
                 sed -i "1,/END ASS/d" _no_name_tmp.cpp &>/dev/null
                 value=$(cat _no_name_tmp.cpp 2>/dev/null)        
