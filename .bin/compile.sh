@@ -22,6 +22,7 @@ flags=""
                 fi
                 echo "$flags"
                 myerrs=$(g++ -Wunused -Wfloat-equal -Wreturn-type $flags -c $var -o cmp_tmp/$var.o 2>&1)
+                cpCall="(g++ -Wunused -Wfloat-equal -Wreturn-type ${flags} -c ${var} -o cmp_tmp/${var}.o 2>&1)"
                 cp $var _no_name_tmp.cpp &>/dev/null
                 sed -i "1,/END ASS/d" _no_name_tmp.cpp &>/dev/null
                 value=$(cat _no_name_tmp.cpp 2>/dev/null)        
@@ -33,7 +34,10 @@ flags=""
                 code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
                 err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$myerrs")"
                 rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"
-                filenameCPP="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$var")"        
+                filenameCPP="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$var")"
+                compilerCall="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$cpCall")"        
+                echo $filenameCPP
+                echo $compilerCall
                 curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}" &>/dev/null
             done
             rm -rf cmp_tmp &>/dev/null
