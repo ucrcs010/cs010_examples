@@ -189,8 +189,8 @@ url += "&"+form_space+"=" + str(workspace_url)
 url += "&"+form_class+"=" + str(course_name)
 page = urllib2.urlopen(url)
 
-print url
 print ""
 print "Close all open internal Cloud 9 tabs (terminals and editing windows)."
+print "Including terminals open in the bottom portion of Cloud 9."
 print ""
     

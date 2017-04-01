@@ -4,6 +4,7 @@ CODE_AREA="entry.1644658506"
 ERROR_AREA="entry.727705083"
 RSUB_EMAIL_AREA="entry.1527918066"
 errors=$(g++ -Wunused -Wfloat-equal -Wreturn-type $* 2>&1)
+flags=""
 
 #if [ "${errors}" != "" ] 
 #then
@@ -13,7 +14,14 @@ errors=$(g++ -Wunused -Wfloat-equal -Wreturn-type $* 2>&1)
             mkdir cmp_tmp &>/dev/null
             for var in "$@"
             do
-                myerrs=$(g++ -Wunused -Wfloat-equal -Wreturn-type -c $var -o cmp_tmp/$var.o 2>&1)
+                short=${var:0:1}
+                if [ "$short" == "-" ]
+                then
+                    flags="${flags} $var"
+                    continue
+                fi
+                echo "$flags"
+                myerrs=$(g++ -Wunused -Wfloat-equal -Wreturn-type $flags -c $var -o cmp_tmp/$var.o 2>&1)
                 cp $var _no_name_tmp.cpp &>/dev/null
                 sed -i "1,/END ASS/d" _no_name_tmp.cpp &>/dev/null
                 value=$(cat _no_name_tmp.cpp 2>/dev/null)        
