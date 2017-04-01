@@ -50,7 +50,7 @@ flags=""
             then
                 value=$(cat $1 2>/dev/null)
             fi
-            cpCall="g++ -Wunused -Wfloat-equal -Wreturn-type ${flags} -c ${1} -o cmp_tmp/${1}.o"
+            cpCall="g++ -Wunused -Wfloat-equal -Wreturn-type $*"
             code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
             err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$errors")"
             rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"    
