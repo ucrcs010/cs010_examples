@@ -3,6 +3,8 @@ FORM_LOCATION="https://docs.google.com/forms/d/10yunl8d4HkAx6WfHEdarhKhK-9vc4VKY
 CODE_AREA="entry.1644658506"
 ERROR_AREA="entry.727705083"
 RSUB_EMAIL_AREA="entry.1527918066"
+FILE_NAME_AREA="entry.780955098"
+COMPILE_CALL_AREA="entry.2095423800"
 errors=$(g++ -Wunused -Wfloat-equal -Wreturn-type $* 2>&1)
 flags=""
 
@@ -36,9 +38,7 @@ flags=""
                 rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"
                 filenameCPP="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$var")"
                 compilerCall="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$cpCall")"        
-                echo $filenameCPP
-                echo $compilerCall
-                curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}" &>/dev/null
+                curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}&${FILE_NAME_AREA}=${filenameCPP}&${COMPILE_CALL_AREA}=${compilerCall}" &>/dev/null
             done
             rm -rf cmp_tmp &>/dev/null
         elif [ "$#" -gt 0 ]; then
@@ -52,8 +52,10 @@ flags=""
             fi
             code_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$value")"
             err_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$errors")"
-            rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"        
-            curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}" &>/dev/null        
+            rsub_val="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$UCRCS_UCRSUB_EMAIL")"    
+                filenameCPP="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$var")"
+                compilerCall="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$cpCall")"                    
+            curl "${FORM_LOCATION}?${CODE_AREA}=${code_val}&${ERROR_AREA}=${err_val}&${RSUB_EMAIL_AREA}=${rsub_val}&${FILE_NAME_AREA}=${filenameCPP}&${COMPILE_CALL_AREA}=${compilerCall}" &>/dev/null
         fi
     fi
     echo "$errors"
