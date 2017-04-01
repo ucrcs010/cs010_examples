@@ -8,7 +8,7 @@
 
 
 # Google Forms have max 40,000 entries. Change response destination per quarter!
-google_form = "https://docs.google.com/forms/d/1FAIpQLScPybh5E2YcWJOooKNt1hLsUW00_UBJ3luSrMWMP00La26m9A/formResponse"
+google_form = "https://docs.google.com/forms/d/e/1FAIpQLScPybh5E2YcWJOooKNt1hLsUW00_UBJ3luSrMWMP00La26m9A/formResponse"
 form_fname = "entry.1121454124"
 form_lname = "entry.592757579"
 form_email = "entry.1580341649"
@@ -118,7 +118,7 @@ while True:
             elif course_name == "CS_TEACH":
                 course = "99"
             break
-    course = raw_input("\n\t1) CS 010\n\t2) CS 010 online\n\t3) CS 012\n\t4) CS 012 online\n\t5) CS 013\nSeveral courses are listed above, please enter the number preceding the course you are enrolled in: ")
+    course = raw_input("\n\t1) CS 010\n\t2) CS 010 online\n\t3) CS 012\n\t4) CS 012 online\n\t5) CS 013\nSeveral courses are listed above, please enter the\nnumber preceding the course you are enrolled in: ")
     course = course.strip()
     new_value = True
     if str(course) == "1" or str(course) == "2" or str(course) == "3" or str(course) == "4" or str(course) == "5" or str(course) == "99":
@@ -189,7 +189,7 @@ url += "&"+form_space+"=" + str(workspace_url)
 url += "&"+form_class+"=" + str(course_name)
 page = urllib2.urlopen(url)
 
-
+print url
 print ""
 print "Close all open internal Cloud 9 tabs (terminals and editing windows)."
 print ""
